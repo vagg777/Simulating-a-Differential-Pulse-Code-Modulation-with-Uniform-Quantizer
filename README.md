@@ -64,7 +64,7 @@ The source to be encoded/decoded is a `10,000` samples signal. The samples of th
 ## 6. Running the DPCM system
 1. We build the aforementioned system in `MATLAB`.
 2. We choose two values of `p ≥ 4` and for `N = 1,2,3 bits`, we draw the initial signal and the prediction error on the same graph
-    - Indicative examples for `p = 4` and `N = 1,2,3 bits` (blue color: input signal, orange color: error prediction signal)
+    - Indicative examples for `p = 4` and `N = 1,2,3` (blue color: input signal, orange color: error prediction signal)
         ![This is a alt text.](https://i.ibb.co/kcqZsbB/P-4-N-1.png "Figure 3")
 
         ***Figure 3. p=4 and N=1***
@@ -93,7 +93,7 @@ The source to be encoded/decoded is a `10,000` samples signal. The samples of th
     - In any case, the higher the `p`, the smaller the error, although from one point onwards, increasing the `p` does not help to substantially minimize the error `E`.
 
 4. For `N = 1,2,3 bits`, we display the original and the reconstructed signal on the receiver for `p = 4 and p = 8` and we discuss upon on the reconstruction results in relation to the quantization bits.
-    - Indicative examples for `p = 4` and `N = 1,2,3 bits` (blue color: input signal, orange color: decoded output signal)
+    - Indicative examples for `p = 4` and `N = 1,2,3` (blue color: input signal, orange color: decoded output signal)
         ![This is a alt text.](https://i.ibb.co/gm03DcT/p-4-N-1.png "Figure 7")
 
         ***Figure 7. p=4 and N=1***
