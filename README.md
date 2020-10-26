@@ -1,4 +1,4 @@
-# Simulating a  Differential pulse-code modulation (DPCM)
+# Simulating a  Differential Pulse-Code Modulation (DPCM) with Uniform Quantizer 
 
 ## 1. Introduction
 
@@ -15,6 +15,7 @@
 The encoder and decoder of a DPCM system are shown in ***Figure 1***. In order to encode the value of the current sample we first calculate a forecast for its value based on coded values of previous samples. The prediction of the signal `x(n)` 𝑥is denoted as `y'(n)`. In Figure 1, we observe a memory device (both in the transmitter and in the receiver), which keeps stored the reconstructed values of the previous samples based on which the prediction of the price of the current sample will be calculated. Our aim is to minimize the scatter of the error signal `y(n) = x(n) - y'(n)`, so that it has a small dynamic range and can be satisfactorily described by a small number of bits. The process of quantizing the error signal `y' = x(n)` leads to the signal `y^(n)` which is sent to the receiver.
 
 ![This is a alt text.](https://i.ibb.co/Mgt3bxN/1.png "Figure 1")
+
 ***Figure 1***
 
 In the receiver, the signal `y^(n)` is combined with the signal `y'(n)` (the prediction of `x(n)`). Since the previously reconstructed values, as well as the forecasting method used by the transmitter, are known to the receiver, it implies that the transmitter and receiver are able to calculate exactly the same values for the prediction `y'(n)`. As in the case of Δελτα (Delta) encoding, here too the transmitter includes as part of the receiver device which calculates the reconstruction `x^(n)`. These values are used by the transmitter to calculate the prediction, and not the actual values `x(n)`, in order to fully mimic the layout of the receiver which of course does not know the actual values. By using the reconstructed values to calculate the prediction and then the prediction error, we ensure (as in the case of delta coding) that we do not have accumulation of the quantization error.
@@ -48,6 +49,7 @@ The quantization levels are represented by the integers 1,2,…., 2𝑁 where th
 Moreover, `centers` is a vector with the centers of the quantization areas. In particular, the quantist should limit the dynamic range of the prediction error to the values `[min_value : max_value]` by placing the samples outside the dynamic range at the corresponding extreme acceptable value. The quantizer then calculates the quantization step `Δ`, the centers of each region, calculates to which region the input sample belongs, and outputs the coded sample `y^(n)`. The coded sample at the output of the quantizer will take values between 1 and 2N, which are the quantization regions. The quantized version of the output sample will take the value of the quantization center of the area to which the current input sample belongs. This sample will be used as a pointer to the vector `centers` get the quantized sample as `centers(y^(n))`. An example of the quantizer areas for `N = 2` are depicted below in ***Figure 2***. 
 
 ![This is a alt text.](https://i.ibb.co/grH1p2D/Screenshot-1.png "Figure 2")
+
 ***Figure 2***
 
 ## 5. Loading the source
@@ -59,4 +61,4 @@ The source to be encoded/decoded is a 10,000 sample signal. The samples of the s
 1. We build the aforementioned system in `MATLAB`.
 2. We choose two values of `p ≥ 4` and for `N = 1,2,3 bits`, we draw the initial signal and the prediction error on the same graph
 3. We Evaluate its performance with a graph showing the mean square prediction error with respect to `N` and for various values of `p`. Specifically for number of bits `N = 1,2,3 bits` used by the uniform quantizer to encode the prediction signal and for a predicted order `p = 4: 1: 8`.
-4. For `N = 1,2,3 bits`, we display the original and the reconstructed signal on the receiver for `p = 4 and p = 8`and we discuss upon on the reconstruction results in relation to the quantization bits.
+4. For `N = 1,2,3 bits`, we display the original and the reconstructed signal on the receiver for `p = 4 and p = 8` and we discuss upon on the reconstruction results in relation to the quantization bits.
