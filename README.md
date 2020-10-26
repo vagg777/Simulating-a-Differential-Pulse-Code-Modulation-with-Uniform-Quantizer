@@ -65,7 +65,7 @@ The source to be encoded/decoded is a `10,000` samples signal. The samples of th
 1. We build the aforementioned system in `MATLAB`.
 2. We choose two values of `p ≥ 4` and for `N = 1,2,3 bits`, we draw the initial signal and the prediction error on the same graph
     - Indicative examples for `p = 4` and `N = 1,2,3 bits` (blue color: input signal, orange color: error prediction signal)
-    ![This is a alt text.](https://i.ibb.co/kcqZsbB/P-4-N-1.png "Figure 3")
+        ![This is a alt text.](https://i.ibb.co/kcqZsbB/P-4-N-1.png "Figure 3")
 
         ***Figure 3. p=4 and N=1***
         
