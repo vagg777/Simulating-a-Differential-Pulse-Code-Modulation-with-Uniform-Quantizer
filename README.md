@@ -83,7 +83,9 @@ The source to be encoded/decoded is a `10,000` samples signal. The samples of th
     - Also, the larger the `N`, the smaller the prediction error, so the smaller the error in the reconstructed signal, as the quantizer will have more quantization areas and will be better represented with a smaller quantization error.
 3. We evaluate its performance with a graph showing the mean square prediction error with respect to `N` and for various values of `p`. Specifically for number of bits `N = 1,2,3 bits` used by the uniform quantizer to encode the prediction signal and for a predicted order `p = 4: 1: 8`.
     - Indicative result:
+    
         ![This is a alt text.](https://i.ibb.co/DtJhmt2/Q3.png "Figure 6")
+
 
         ***Figure 6. Mean square prediction error for all p values***
     - Drawing the graph `E(Y^2) - N` for the various values of `p` with respect to `N`, we observe that indeed the square prediction error `E(Y^2)` decreases slightly when we change `p` and without necessarily following any ascending or descending order for `E` and we observe multiple similar alternations in maximum values or the same N as the value of p changes. 
