@@ -105,7 +105,7 @@ The source to be encoded/decoded is a `10,000` samples signal. The samples of th
         ![This is a alt text.](https://i.ibb.co/kX0c384/p-4-N-3.png "Figure 9")
    
         ***Figure 9. p=4 and N=3***
-    - Once again, we see the difference created by the different values of N. 
+    - Once again, we see the difference created by the different values of `N`. 
     - As `N` increases, the reconstructed y-chart has fewer and fewer differences-anomalies with the initial x, i.e. it tends to get closer and closer to the initial signal. 
     - Also, the various values of `p` for constant `N` have little effect on the reconstructed y-chart. 
     - Therefore, the higher the values of `p` and `N`, the better the initial signal is represented at the output of the decoder.
